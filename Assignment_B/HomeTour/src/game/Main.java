@@ -23,6 +23,32 @@ public class Main {
 		System.out.println("Welcome to a home tour!" + "\nInstructions: Type in the word 'go' and a compass direction to move around the house! (Ex.'north')"
 		+ " \n\n___________________________" );
 		printRoom(player1);
+		System.out.println("___________________________");
+		
+		for(int i = 0; i < player1.getCurrentRoom().getExits().length; i++) {
+			
+			
+
+			if(!player1.getCurrentRoom().getExits()[i].getname().equals("Empty")) {
+				
+				switch(i) {
+				case 1 :
+					System.out.print("north");
+					break;
+				case 2:
+					System.out.print("west");
+					break;
+				case 3:
+					System.out.print("east");
+					break;
+				case 0:
+					System.out.print("south");
+					break;
+				}
+				
+				System.out.println(" exit: " + player1.getCurrentRoom().getExits()[i].getname() + " " + player1.getCurrentRoom().getExits()[i].getSDescription());
+			}
+		}
 		
 		String[] tempInput = new String[2];
 
